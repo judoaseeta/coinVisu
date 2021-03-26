@@ -1,0 +1,32 @@
+@import '../../../root.module';
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    padding: 0.1rem;
+    & .buttons {
+        width: 30rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    & .button {
+        @include button(var(--menuInner), var(--indicator));
+        &.selected {
+            background-color: rgba(red, 0.1);
+            color: black;
+            &:hover {
+                opacity: 1;
+                cursor:default;
+            }
+        }
+    }
+}
+@media (max-width: 568px) {
+    .container {
+        & .buttons {
+            width: 95vw;
+        }
+    }
+}

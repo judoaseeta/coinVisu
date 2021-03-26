@@ -1,0 +1,17 @@
+.topbar {
+    width: 100vw;
+    height: 1rem;
+    background-color: var(--contrast);
+    display: flex;
+    justify-content: flex-end;
+    & .topbarItem {
+        font-size: 0.7rem;
+        color: var(--edge);
+        user-select: none;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        &:last-child {
+            margin-right: 3rem;
+        }
+    }
+}

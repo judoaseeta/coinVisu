@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+}
+.loadingPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+.innerContainer {
+    width: 100%;
+    height: 25rem;
+    grid-template-columns: repeat(3,1fr);
+    display: grid;
+    place-items: center center;
+    background-color: var(--chartBG);
+    box-shadow: 0.1rem 0.1rem 0.15rem var(--shadow);
+    & .body {
+        display: grid;
+        place-items: center center;
+        width: 100%;
+        height: 25rem;
+        & .chartWrapper {
+            width: 100%;
+            height: 25rem;
+        }
+    }
+}
+@media (max-width: 699px) {
+    .innerContainer {
+        width:  95vw;
+        height: 60rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,1fr);
+
+        & .body {
+            width: 20rem;
+            height: 20rem;
+            & .chartWrapper {
+                width: 100%;
+                height: 20rem;
+            }
+        }
+    }
+}
+@media (min-width: 700px) and (max-width: 1200px) {
+    .container {
+        width: 95vw;
+    }
+    .innerContainer {
+        width: 100%;
+        height: 40rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2,1fr);
+
+        & .body {
+            height: 20rem;
+            & .chartWrapper {
+                width: 20rem;
+                height: 20rem;
+            }
+        }
+    }
+}

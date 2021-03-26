@@ -1,0 +1,21 @@
+@import './root.module';
+:root {
+    --contrast: #dfe6e9;
+    --shadow: #b2bec3;
+    --unselected: #636e72;
+    --up: #ff4757;
+    --down: #3742fa;
+    --menu : #f7f1e3;
+    --indicator: #d2dae2;
+    --menuInner: #30336b;
+    --edge: #535c68;
+    --line1: #be2edd;
+}
+    
+.container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f1e3;
+}

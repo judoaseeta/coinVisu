@@ -1,0 +1,34 @@
+.container {
+    width: 80vw;
+    height: 70vh;
+    position: relative;
+    & .swapButton {
+        position: absolute;
+        border: none;
+        background-color: var(--menuInner);
+        color: var(--indicator);
+        cursor: pointer;
+        font-size: 0.8rem;
+        top: 0.2rem;;
+        right: 0.2rem;
+    }
+    & .wrapper {
+        width: 100%;
+        min-height: 30vh;
+        height: 100%;
+    }
+}
+
+@media (max-width: 568px) {
+    .container {
+        width: 95vw;
+        margin: 0 auto;
+    }
+   
+}
+@media(min-width: 569px) and (max-width: 900px) {
+    .container {
+        width: 90vw;
+        margin: 0 auto;
+    }
+}

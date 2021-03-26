@@ -1,0 +1,61 @@
+@import '../../../root.module';
+.calendars {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    & .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        .request {
+            padding: 0.3rem;
+            font-size: 0.8rem;
+            min-width: 3rem;
+            @include button(var(--menuInner),var(--indicator));
+        }
+        .label {
+            font-size: 0.8rem;
+            margin: 0 0.3rem;
+            user-select: none;
+        }
+    }
+}
+@media (min-width: 569px) and (max-width: 900px) {
+    .calendars {
+    & .wrapper {
+        flex-direction: column;
+        &:last-child {
+            flex-direction: column-reverse;
+        }
+        .request {
+            padding: 0.2rem;
+            font-size: 0.7rem;
+            min-width: 2rem;
+        }
+        .label {
+            font-size: 0.6rem;
+            margin: 0 0.1rem;
+            user-select: none;
+        }
+    }
+    }
+}
+@media (max-width: 568px) {
+    .calendars {
+        flex-direction: column;
+        & .wrapper {
+            flex-direction: column;
+            &:last-child {
+                flex-direction: column-reverse;
+            }
+            margin-bottom: 0.3rem;
+            .label {
+                font-size: 0.4rem;
+                margin: 0 0.1rem;
+                word-wrap: break-word;
+                word-break: break-all;
+            }
+        }   
+    }
+}

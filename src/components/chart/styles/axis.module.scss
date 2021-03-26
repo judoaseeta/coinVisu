@@ -1,0 +1,48 @@
+
+.xAxisText {
+    font-size: 0.6rem;
+    user-select: none;
+    text-anchor: middle;
+    &.tier2 {
+        font-size: 0.6rem;
+    }
+    &.tier1 {
+        font-size: 0.7rem;
+        font-weight: bolder;
+    }
+}
+.yAxisText {
+    font-size: 0.6rem;
+    user-select: none;
+    text-anchor: end;
+    transform: translate(0,0.2rem);
+}
+
+@media (max-width: 568px) {
+    .xAxisText {
+        font-size: var(--font568px2);
+        &.tier2 {
+            font-size: var(--font568px2);
+        }
+        &.tier1 {
+            font-size: var(--font568px1);
+        }
+    }
+    .yAxisText {
+        font-size: var(--font568px2);
+    }
+}
+@media (min-width: 569px) and (max-width: 900px) {
+    .xAxisText {
+        font-size: var(--font900px2);
+        &.tier2 {
+            font-size: var(--font900px2);
+        }
+        &.tier1 {
+            font-size: var(--font900px1);
+        }
+    }
+    .yAxisText {
+        font-size: var(--font900px2);
+    }
+}

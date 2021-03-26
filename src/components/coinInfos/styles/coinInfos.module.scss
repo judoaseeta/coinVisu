@@ -1,0 +1,13 @@
+
+.container {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0.2rem 0.2rem 0.3rem var(--shadow);
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 568px) {
+    .container {
+        box-shadow: none;
+    }
+}

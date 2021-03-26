@@ -1,0 +1,44 @@
+
+.container {
+    width: 22rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--contrast);
+    box-shadow: 0.1rem 0.1rem 0.15rem var(--shadow);
+}
+.list {
+    display: flex;
+    width: 20rem;
+    justify-content: space-evenly;
+}
+.page {
+    width: 2rem;
+    padding: 0.2rem;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--menuInner);
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(red,0.1);
+    }
+    &.selected{
+        background-color: var(--menuInner);
+        color: white;
+    }
+}
+@media (max-width: 568px) {
+    .container {
+        width: 80%;
+    }
+    .list {
+        width: 80%;
+    }
+    .page {
+        font-size: 0.9rem;
+        width: 100%;
+        padding: 0.1rem;
+    }
+}

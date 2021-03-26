@@ -1,0 +1,29 @@
+:root {
+    --chartBG: #f5f6fa;
+    --lightStroke:#2f3542;
+    --panel: #00b894;
+    --font568px1 : 0.4rem;
+    --font568px2 : 0.5rem;
+    --font900px1 : 0.6rem;
+    --font900px2 : 0.7rem;
+}
+.panel {
+    fill:transparent;
+    &.selected {
+        fill: var(--panel);
+        fill-opacity: 0.3;
+        &.up {
+            fill: var(--up);
+        }
+        &.down {
+            fill: var(--down);
+        }
+    }
+}
+.topPanel {
+    fill: transparent;
+    cursor: pointer;
+}
+.dateCircle {
+    fill: #f53b57;
+}

@@ -1,0 +1,44 @@
+:root {
+    --contrast: #dfe6e9;
+    --shadow: #b2bec3;
+    --unselected: #636e72;
+    --up: #ff4757;
+    --down: #3742fa;
+    --menu : #f7f1e3;
+    --indicator: #d2dae2;
+    --menuInner: #30336b;
+    --edge: #535c68;
+    --line1: #be2edd;
+    --cancel: #c0392b;
+    --nav: #393e46;
+}
+body {
+    box-sizing: border-box;
+} 
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    padding: 0;
+}
+ul,ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin button($bgColor,$color) {
+    background-color: $bgColor;
+    color: $color;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow);
+    &:hover {
+        opacity: 0.7;
+    }
+}
+@media (prefers-color-scheme: dark) {
+   :root {
+        --contrast: #2c3e50;
+        --shadow: #7f8c8d;
+        --unselected: #8395a7;
+   }
+}

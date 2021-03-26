@@ -1,0 +1,29 @@
+
+.seeMore {
+    background-color: var(--contrast);
+    padding: 0.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 3rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: black;
+    line-height: 1.3;
+    &:hover {
+        background-color: rgba(red,0.1);
+    }
+    &:focus {
+        outline: none; 
+        background-color: rgba(red,0.1);
+    }
+    &:visited {
+        text-decoration: none;
+        color: black;
+    }
+    & .keyword {
+        color: red;
+        line-height: 1.3;
+    }
+}

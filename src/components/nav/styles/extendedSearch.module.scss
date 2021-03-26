@@ -1,0 +1,20 @@
+.container {
+    width: 90vw;
+    padding: 2rem;
+    & .searchList {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 0.2rem;
+        row-gap: 0.1rem;
+    }
+}
+@media(max-width: 586px) {
+    .container {
+        width: 80vw;
+        padding: 0.5rem;
+        & .searchList {
+            grid-template-columns: 1fr;
+            column-gap: 0.1rem;
+        }
+    }
+}

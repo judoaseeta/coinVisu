@@ -1,0 +1,19 @@
+.container {
+    width: 100%;
+    display: flex;
+    padding: 0.5rem 0;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.1rem solid var(--menuInner);
+    border-bottom: 0.1rem solid var(--menuInner);
+}
+
+@media (max-width: 568px) {
+    .container {
+        width: 100%;
+        padding: 0.1rem 0;
+        padding-left: 0;
+        margin-left: 0;
+        justify-content: center;
+    }
+}

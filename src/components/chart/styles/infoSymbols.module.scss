@@ -1,0 +1,42 @@
+.wrapper {
+    fill: #ffffff;
+    stroke: #F97F51;
+    stroke-width: 0.03rem;
+}
+.text {
+    font-size: 0.5rem;
+    user-select: none;
+    text-anchor: middle;
+    fill: #2f3542;
+}
+.priceLabel {
+    font-size: 0.7rem;
+    user-select: none;
+    text-anchor: start;
+    fill: #2f3542;
+    font-weight: bold;
+}
+.priceText {
+    font-size: 0.6rem;
+    user-select: none;
+    text-anchor: end;
+    fill: #2f3542;
+    
+}
+.volumeLabel {
+    font-size: 0.6rem;
+    user-select: none;
+    text-anchor: start;
+    fill: #2f3542;
+    font-weight: bold;
+}
+.volumeText {
+    font-size: 0.6rem;
+    user-select: none;
+    text-anchor: end;
+    fill: #2f3542;
+}
+.symbols {
+    transform: opacity 0.3s ease;
+    transition: opacity 0.3s ease;  
+}

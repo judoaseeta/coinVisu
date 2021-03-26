@@ -1,0 +1,9 @@
+@import './config.module.scss';
+
+.container {
+    background-color: var(--chartBG);
+}
+.line {
+    stroke-width: 2px;
+    stroke: #2f3640;
+}

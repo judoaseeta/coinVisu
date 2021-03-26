@@ -1,0 +1,46 @@
+
+.symbols {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+    user-select: none;
+}
+.price {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    &.up {
+        color: var(--up);
+    }
+    &.down {
+        color: var(--down);
+    }
+}
+.arrow {
+    font-size: 1.1rem;
+    &.up {
+        color: var(--up);
+    }
+    &.down {
+        color: var(--down);
+    }
+}
+.update, .volume{
+    font-size: 0.5rem;
+    color: #535c68;
+    user-select: none;
+}
+@media (max-width: 568px) {
+    .symbols {
+        font-size: 0.7rem;
+        margin-right: 0.1rem;
+    }
+    .price {
+        font-size: 0.8rem;
+        margin-right: 0.3rem;
+    }
+    .arrow {
+        font-size: 0.8rem;
+    }
+}

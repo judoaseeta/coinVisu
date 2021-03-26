@@ -1,0 +1,21 @@
+@import './config.module.scss';
+
+.container {
+    background-color: var(--chartBG);
+}
+.bar {
+    stroke: var(--lightStroke);
+}
+
+.candle {
+    cursor: pointer;
+    &.up {
+        fill: var(--up);
+    }
+    &.down {
+        fill: var(--down);
+    }
+    &:hover {
+        stroke: #ffa502;
+    }
+}

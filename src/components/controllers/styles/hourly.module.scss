@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .description {
+        font-size: 0.8rem;
+        margin-right: 0.2rem;
+    }
+}
+@media (max-width: 568px ) {
+    .container {
+        justify-content: space-between;
+        flex-direction: column;
+        & .description { 
+            margin-right: 0;
+            margin-bottom: 0.2rem;
+            font-size: 0.6rem;
+        }
+    }
+}
+@media (min-width: 569px) and (max-width: 900px) {
+    .container {
+
+        & .description { 
+            font-size: 0.6rem;
+        }
+    }
+}

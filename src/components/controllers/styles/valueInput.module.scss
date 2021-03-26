@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    position: relative;
+    > input {
+        width: 4ch;
+    }
+    & .buttons {
+        display: flex;
+        flex-direction: column;
+        margin-right: 0.1rem;
+        & .arrow {
+            background-color: var(--menuInner);
+            color: var(--indicator);
+            border: none;
+            border-bottom: 0.1em solid var(--shadow);
+            cursor: pointer;
+        }
+    }
+    & .submit {
+        margin-right: 0.2rem;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,93 @@
+
+.infoItem {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr 1.5fr 1fr;
+    height: 3rem;
+    background-color: var(--contrast);
+    border-bottom: 0.1rem solid var(--shadow);
+    cursor: pointer;
+    outline: none;
+    &:hover {
+        background-color: rgba(red,0.1);
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+    .data {
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+        &.name {
+            font-weight: bold;
+            font-size: 0.9rem;
+            justify-self: flex-start;
+            padding-left: 0.8rem;
+        }
+        &.pct {
+            font-weight: bold;
+            font-size: 1rem;
+            &.down {
+                color: var(--down);
+            }
+            &.up {
+                color: var(--up);
+            }
+        }
+    }
+    .coinImage {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 0.3rem;
+    }
+    .chartWrapper {
+        width: 80%;
+        height: 3rem;
+        & .chartLine {
+            stroke-width: 0.2rem;
+            stroke: var(--line1);
+            fill: none;
+            &.up {
+                stroke: var(--up);
+            }
+            &.down {
+                stroke: var(--down);
+            }
+        }
+    }
+}
+
+@media (max-width: 568px) {
+    .infoItem {
+        grid-template-columns: 1fr 1.5fr 1.2fr;
+        grid-template-rows: 1fr 1fr;
+        height: 6rem;
+        margin-bottom: 0.3rem;
+        box-shadow: 0.1rem 0.1rem 0.15rem var(--shadow);
+        .coinImage {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0;
+        }
+        .data {
+            width: 100%;
+            font-size: 0.4rem;
+            &:nth-child(1),&:nth-child(2),&:nth-child(3) {
+                border-bottom: 1px solid var(--shadow);
+            }
+            &.name {
+                font-size: 0.6rem;
+                padding-left: 0;
+            }
+            &.pct { 
+                font-size: 0.6rem;
+            }
+        }
+    }
+    .chartWrapper {
+        & .chartLine { 
+            stroke-width: 0.05rem;
+        }
+    }
+}

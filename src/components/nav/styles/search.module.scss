@@ -1,0 +1,101 @@
+.search {
+    position: relative;
+    width: 40vw;
+    .searchResult {
+        width: 100%;
+    }
+    .holder {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .searchInput {
+        width: 100%;
+        background-color: #eeeeee;
+        height: 2.5rem;
+        font-size: 1.5rem;
+        border: none;
+        padding-left: 0.8rem;
+        margin-top: 0.3rem;
+        &::placeholder {
+            text-align: center;
+            color: var(--menuInner);
+            font-size: 1rem;
+        }
+    }
+    .hiddenResult {
+        background-color: var(--contrast);
+        border-left: 0.1rem solid black;
+        border-right: 0.1rem solid black;
+        border-bottom: 0.1rem solid black;
+        box-shadow: 0.2rem 0.2rem 0.3rem var(--shadow);
+        width: calc(100% + 0.8rem);
+        position: absolute;
+        top: calc(100% + 0.2rem);
+        left: 0;
+        visibility: hidden;
+        &.on {
+            visibility: visible;
+        }
+    }
+}
+@media (max-width: 568px) {
+    .search {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        .holder {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .searchInput {
+            width: 70vw;
+            padding-left: 0;
+            padding-right: 0;
+            font-size: 1rem;
+            height: 2rem;
+        }
+        .hiddenResult { 
+            top: calc(100% + 0.1rem);
+            left: 15vw;
+            width: 70vw;
+            border: 0;
+        }
+    }
+}
+@media (max-width:568px) {
+    .search {
+        width: 60vw;
+        .searchInput {
+            padding-left: 1rem;
+            &::placeholder {
+                font-size:0.6rem;
+            }
+        }
+        .hiddenResult { 
+            top: calc(100% + 0.1rem);
+            left: 0;
+            width: 60vw;
+            border: 0;
+        }
+    }
+}
+@media (min-width:569px) and (max-width: 900px) {
+    .search {
+        display: flex;
+        justify-content: center;
+        width: 60vw;
+        .searchInput {
+            padding-left: 0;
+            padding-right: 0;
+            &::placeholder {
+                font-size: 0.8rem;
+            }
+        }
+        .hiddenResult { 
+            top: calc(100% + 0.1rem);
+            left: 0;
+            width: 60vw;
+            border: 0;
+        }
+    }
+}

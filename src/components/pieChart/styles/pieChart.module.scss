@@ -1,0 +1,40 @@
+.arc {
+    cursor: pointer;
+    &.unselected {
+        fill-opacity: 0.5;
+    }
+}
+.subArc {
+    fill-opacity: 0;
+    transition: opacity 0.2s ease;
+    &.selected {
+        fill-opacity: 1;
+    }
+}
+.label {
+    text-anchor: middle;
+    font-size: 0.4rem;
+    user-select: none;
+    text-shadow: 0.1rem 0.1rem 0.2rem var(--shadow);
+}
+.symbol {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.title {
+    word-break: all;
+    font-size: 0.9rem;
+}
+.bar {
+    fill: #636e72;
+}
+.pct {
+    text-anchor: middle;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    fill: #f5f6fa;
+}
+.coreKey {
+    font-size: 0.8rem;
+    color: var(--shadow);
+}

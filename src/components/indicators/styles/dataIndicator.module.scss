@@ -1,0 +1,20 @@
+
+@import './priceIndicator.module.scss';
+.dataList {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 1fr;
+    font-size: 0.7rem;
+    font-weight: bolder;
+    gap: 0.3rem;
+    user-select: none;
+    & .time {
+        text-decoration: underline;
+    }
+}
+@media (max-width: 568px) {
+    .dataList {
+        gap: 0.1rem;
+        font-size: 0.3rem;
+    }
+}

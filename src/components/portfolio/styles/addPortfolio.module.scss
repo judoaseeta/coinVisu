@@ -1,0 +1,84 @@
+@import '../../../root.module';
+
+.container {
+    background-color: var(--contrast);
+
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: static;
+    &.on {
+        background-color: rgba(0,0,0,0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 995;
+    }
+}
+.form {
+    background-color: var(--contrast);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+.inputUnits {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    width: 100%;
+    & .inputUnit {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 40% 70%;
+        margin-bottom: 0.1rem;
+        & .message {
+            min-height: 1.2rem;
+            font-size: 0.7rem;
+            color: var(--cancel);
+            grid-column: 1/3;
+            margin-top: 0.1rem;
+        }
+    }
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.offWrapper {
+    width: 100%;
+    height: 100%;
+    background-color: var(--contrast);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left : 0.1rem solid var(--edge);
+}
+.baseButton {
+    @include button(var(--menuInner), var(--indicator));
+    padding: 0.3rem;
+}
+.backButton {
+    @include button(var(--cancel), var(--indicator));
+}
+
+@media (max-width: 568px) {
+    .offWrapper {
+        border-left: none;
+        border-top : 0.1rem solid var(--edge);
+    }
+}

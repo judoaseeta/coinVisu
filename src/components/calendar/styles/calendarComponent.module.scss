@@ -1,0 +1,81 @@
+@import '../../../root.module';
+:root {
+    --calendarWidth: 15rem;
+    --calendarWidthSmall: 13rem;
+}
+.container {
+    background-color: var(--contrast);
+    box-shadow: 0.1em 0.1em 0.15em var(--shadow);
+    user-select: none;
+    width: var(--calendarWidth);
+}
+.calendar_th {
+    font-size: 0.9rem;
+    font-weight: lighter;
+}
+.calendar_td {
+    cursor:pointer;
+    text-align: center;
+    &:hover {
+        opacity: 0.4;
+    }
+    &.isNotCurrentMonth {
+        color: var(--unselected);
+        opacity: 0.7;
+        &:hover {
+            opacity: 1;
+        }
+        &.isAfterToday {
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+    &.isAfterToday{
+        color: white;
+        background-image: repeating-linear-gradient(to bottom, transparent, transparent 2px, #f50c0c 2px, #f50c0c 4px),
+        repeating-linear-gradient(to right, #ff9595, #f86969 2px, #f50c0c 4px, #f50c0c 4px);
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &.isSameDay {
+        background-color: blue;
+        color: white;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    
+}
+
+@media(max-width: 568px) {
+    .container {
+        width: var(--calendarWidthSmall);
+    }
+    .calendar_th {
+        font-size: 0.6rem;
+    }
+    .calendar_td {
+        font-size: 0.6rem;
+    }
+}
+@media(min-width: 569px) and (max-width: 900px) {
+    .container {
+        width: var(--calendarWidthSmall);
+    }
+    .calendar_th {
+        font-size: 0.6rem;
+    }
+    .calendar_td {
+        font-size: 0.6rem;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .calendar_th {
+        color: #bdc3c7;
+    }
+    .calendar_td {
+        color: #bdc3c7;
+    }
+}
