@@ -18,6 +18,17 @@ export const dataTimeToString = (date: Date, timeType: HistoDataTimeType) => {
         return `${date.getDate()}일 ${date.getHours()}시 ${date.getMinutes()}분`;
     }
 }
+export function numToUnit(num: number) {
+    if(num > 1000000000) {
+        const bu = (num / 1000000000).toFixed(3);
+        return `$ ${bu}bil`;
+    } else if (num > 1000000) {
+        const mu =(num / 1000000).toFixed(3);
+        return `$ ${mu}mil`;
+    } else {
+        return `$ ${num}`;
+    }
+}
 
 export function isLogScale(scale: ScaleLogarithmic<number,number> | ScaleLinear<number,number>): scale is ScaleLogarithmic<number,number> {
     return !!(scale as ScaleLogarithmic<number,number>).base ? true : false;

@@ -26,7 +26,7 @@ export const getTop100Coins = async (): Promise<CoinInfo[]> => {
     try {
         const result = await fetch(urlWithKey);
         const parsed = await result.json() as RawCoinsResponse;
-        return parsed.Data.map( rawInfos => coinInfoParse(rawInfos));
+        return parsed.Data.filter( d => d.DISPLAY ).map( rawInfos => coinInfoParse(rawInfos))
     } catch(e) {
         throw new Error('error occurs during getting top 100 coins');
     }

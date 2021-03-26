@@ -6,8 +6,9 @@ import {
     RawToCurrent
 } from './cryptoData';
 export const coinInfoParse = (rawCoinInfo: RawCoinInfo): CoinInfo => {
+    const display = rawCoinInfo.DISPLAY!.USD;
     return {
-        ...rawCoinInfo.DISPLAY.USD,
+        ...display,
         NAME: rawCoinInfo.CoinInfo.Name
     }
 }

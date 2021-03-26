@@ -1,12 +1,14 @@
+
 .arc {
     cursor: pointer;
+    transition: fill-opacity 0.3s ease;
     &.unselected {
         fill-opacity: 0.5;
     }
 }
 .subArc {
     fill-opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: fill-opacity 0.3s ease;
     &.selected {
         fill-opacity: 1;
     }

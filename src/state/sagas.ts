@@ -159,7 +159,6 @@ function* fetchLivePrice(action: ReturnType<typeof requestLivePrice>) {
         if(yield cancelled()) {
              // @ts-ignore
             if(channel) {
-                console.log('closed');
                 channel.close();
                 yield put(clearLivePrice());
             }

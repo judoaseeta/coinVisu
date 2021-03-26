@@ -9,8 +9,10 @@ import {
     HistoDataTimeType 
 } from '../../entities/cryptoData';
 import {
-    dataTimeToString
+    dataTimeToString,
+    numToUnit,
 } from './utils';
+
 // styles
 import styles from './styles/infoSymbols.module.scss';
 
@@ -173,7 +175,7 @@ const Symbols: React.FC<SymbolsProps> =({
             y={21}
             alignmentBaseline="central"
         >
-            ${data.volumeto}
+            {numToUnit(data.volumeto)}
         </text>
     </symbol>
     <use 
