@@ -72,7 +72,10 @@ const CurrencyMainChart: React.FC<CurrencyMainChartProps> = ({
             const bandWidth = xScale.bandwidth();
             const purePosX = Math.floor(e.clientX - left - dimensions.marginLeft);
             const index = Math.floor(purePosX / bandWidth);
-            setSelectedDataIndex(index);
+            if(index <= xScale.domain().length) {
+                setSelectedDataIndex(index);
+            }
+           ;
         }
     },[
     xScale,
