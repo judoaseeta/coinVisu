@@ -10,7 +10,7 @@ export const mockDimensions: ResizedDimensions = {
     marginBottom: 20,
     boundedWidth: 360,
     boundedHeight: 360,
-    isResized: true
+    isDomAttached: true
 }
 
 

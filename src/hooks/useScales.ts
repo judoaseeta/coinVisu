@@ -29,7 +29,7 @@ const useScales = ({
 }: UseScalesProps):ReturnTypeUseScales => {
     const { ref, dimensions } = useDimensions<HTMLDivElement>(initialDimensions);
     const xScale = useMemo(() => {
-        if(datas) {
+        if(datas && dimensions.isDomAttached) {
             return scaleBand<Date>()
             .domain([...datas.map(d => d.time)])
             .range([0, dimensions.boundedWidth]);
@@ -41,7 +41,7 @@ const useScales = ({
         datas
     ]);
     const yScale = useMemo(() => {
-        if(datas) {
+        if(datas && dimensions.isDomAttached) {
             const min = Math.min(...datas.map(d => d.low));
             const max =  Math.max(...datas.map(d => d.high));
             const ratio = max / min;
@@ -59,11 +59,11 @@ const useScales = ({
             return null;
         }
     },[
-        dimensions.boundedHeight,
+        dimensions,
         datas
     ]);
     const volumeScale = useMemo(() => {
-        if(datas) {
+        if(datas && dimensions.isDomAttached) {
             const volumes = [...datas.map(d => d.volumefrom)];
             if(isVolumeNeeded) {
                 const min = Math.min(...volumes);
@@ -85,7 +85,7 @@ const useScales = ({
             return null;
         }
     },[
-        dimensions.marginBottom,
+        dimensions,
         datas,
         isVolumeNeeded
     ])

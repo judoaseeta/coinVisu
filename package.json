@@ -24,7 +24,6 @@
     "redux": "^4.0.5",
     "redux-saga": "^1.1.3",
     "typescript": "^4.1.2",
-    "use-react-dimensions": "^1.0.7",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -71,6 +70,7 @@
     "@types/react-router": "^5.1.12",
     "@types/react-router-dom": "^5.1.7",
     "msw": "^0.27.1",
-    "react-is": "^17.0.1"
+    "react-is": "^17.0.1",
+    "use-react-dimensions": "^2.0.1"
   }
 }

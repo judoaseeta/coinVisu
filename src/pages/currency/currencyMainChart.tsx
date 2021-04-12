@@ -88,7 +88,6 @@ const CurrencyMainChart: React.FC<CurrencyMainChartProps> = ({
     },[
 
     ]);
-    console.log(selectedDataIndex);
     return (
         <div
             className={styles.container}
@@ -143,7 +142,6 @@ const CurrencyMainChart: React.FC<CurrencyMainChartProps> = ({
                     }
                     {
                         chartType ==='line' && 
-                        dimensions.isResized &&
                         xScale &&
                         yScale &&
                         volumeScale &&

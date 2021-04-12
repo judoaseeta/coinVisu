@@ -41,7 +41,7 @@ export const mockDimensions: ResizedDimensions = {
     marginBottom: 100,
     boundedWidth: 650,
     boundedHeight: 390,
-    isResized: true
+    isDomAttached: true
 }
 
 export const xScale = scaleBand<Date>()

@@ -62,6 +62,7 @@ const mockInitialState:rootState = {
 
         },
         loadingMessage: '',
+        addPortfolioLoading: '',
         on: false
     }
 }

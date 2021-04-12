@@ -6,7 +6,6 @@
     justify-items: center;
     width: 100vw;
     gap: 0.5rem;
-    grid-template-columns: 1fr;
     grid-template-rows: 4rem 3rem 100vh 1fr;
     .controllers {
         display: grid;
@@ -15,7 +14,10 @@
     }
     .charts {
         display: grid;
-        grid-template-rows: 70vh 30vh;
+        width: 80%;
+        margin: 0 auto;
+        grid-template-columns: 100%;
+        grid-template-rows: 70% 30%;
     }
 }
 
@@ -25,23 +27,16 @@
         gap: 0.2rem;
         justify-items: center;
         grid-template-columns: 100vw;
-        grid-template-rows: 10rem 4rem 1fr 1fr;
+        grid-template-rows: 10rem 4rem 30rem 1fr;
         .controllers {
             grid-template-rows: 2rem 8rem;
         }
         .charts {
-            grid-template-columns: 1fr;
-            grid-template-rows: 70vh 30vh;
+            width: 100%;
+            margin: 0 auto;
+            grid-template-columns: 100%;
+            grid-template-rows: 20rem 10rem;
         }
     }
 }
 
-@media (min-width: 700 px) and (max-width: 900px) {
-    .container {
-        grid-template-rows: 10rem 4rem 90vh 1fr;
-        .charts {
-            grid-template-columns: 1fr;
-            grid-template-rows: 70% 30%;
-        }
-    }
-}

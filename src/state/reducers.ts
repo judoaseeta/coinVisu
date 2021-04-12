@@ -327,45 +327,61 @@ export interface PortfolioState {
     on: boolean;
     list: Record<string,CurrPortfolio>;
     loadingMessage: string;
+    addPortfolioLoading: string;
 }
 const PortfolioInitialState: PortfolioState = {
     on: false,
     list: {
         
     },
-    loadingMessage: ''
+    loadingMessage: '',
+    addPortfolioLoading: '',
 }
 const portfolioReducer: Reducer<PortfolioState, PortfolioActions> = (state = PortfolioInitialState, action) => {
-    if(action.type === 'GET_PORTFOLIOS_SUCCESS') {
-        const length = action.payload.portfolios.length;
-        const totalAmount = action.payload.portfolios.reduce((acc,curr) => acc + curr.amount, 0);
-        const totalPrice = action.payload.portfolios.reduce((acc,curr) => acc + curr.price, 0);
-        return {
-            ...state,
-            loadingMessage: '',
-            list: {
-                ...state.list,
-                [action.payload.symbol] :  {
-                    portfolios: action.payload.portfolios,
-                    aggregate :{
-                        avgPrice: totalPrice / length,
-                        amount: totalAmount
+    switch(action.type) {
+        case 'ADD_PORTFOLIO' :
+            return {
+                ...state,
+                addPortfolioLoading: '포트폴리오를 추가합니다...'
+            }
+        case 'ADD_PORTFOLIO_SUCCESS' :
+            return {
+                ...state,
+                addPortfolioLoading: '',
+                on: false,
+            }
+        case 'GET_PORTFOLIOS_SUCCESS' :
+            const length = action.payload.portfolios.length;
+            const totalAmount = Number(action.payload.portfolios.reduce((acc,curr) => acc + curr.amount, 0).toFixed(4));
+            const totalPrice = Number(action.payload.portfolios.reduce((acc,curr) => acc + curr.price, 0).toFixed(4));
+            return {
+                ...state,
+                loadingMessage: '',
+                list: {
+                    ...state.list,
+                    [action.payload.symbol] :  {
+                        portfolios: action.payload.portfolios,
+                        aggregate :{
+                            avgPrice: Number((totalPrice / length).toFixed(4)),
+                            amount: totalAmount
+                        }
                     }
                 }
             }
-        }
-    } else if( action.type === 'GET_PORTFOLIOS') {
-        return {
-            ...state,
-            loadingMessage: `${action.payload.symbol}포트폴리오를 불러오는 중!`
-        }
-    } else if (action.type === 'TOGGLE_ADD_PORTFOLIO') {
-        return {
-            ...state,
-            on: action.payload.toggle
-        }
+        case 'GET_PORTFOLIOS' :
+            return {
+                ...state,
+                loadingMessage: `${action.payload.symbol}포트폴리오를 불러오는 중!`
+            }
+        case 'TOGGLE_ADD_PORTFOLIO' :
+            return {
+                ...state,
+                on: action.payload.toggle
+            }
+        default :
+            return state;
     }
-    return state
+  
 }
 // root reducer and root state
 export const rootReducer = combineReducers({

@@ -40,3 +40,18 @@
     font-size: 0.8rem;
     color: var(--shadow);
 }
+@media (max-width: 800px) {
+    .symbol {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    .title {
+        font-size: 0.7rem;
+    }
+    .pct {
+        font-size: 0.6rem;
+    }
+    .coreKey {
+        font-size: 0.6rem;
+    }
+}

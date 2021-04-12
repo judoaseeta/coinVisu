@@ -70,15 +70,12 @@ const SubCharts: React.FC<SubChartProps> = ({
                     className={styles.innerContainer}
                 >
                     <div
-                        className={styles.body}
-                    >
-                        <div
                             className={styles.chartWrapper}
                             ref={ref}
                         >
                             
                             {
-                                dimensions.isResized &&
+                                dimensions.isDomAttached &&
                                 data1 &&
                                 !loadingMessage &&
                                 <SubChart
@@ -103,15 +100,11 @@ const SubCharts: React.FC<SubChartProps> = ({
                             }
                             
                         </div>
-                    </div>
-                    <div
-                        className={styles.body}
-                    >
                         <div
                             className={styles.chartWrapper}
                         >
                             {
-                                dimensions.isResized &&
+                                dimensions.isDomAttached &&
                                 data2 &&
                                 !loadingMessage &&
                                 <SubChart
@@ -135,15 +128,11 @@ const SubCharts: React.FC<SubChartProps> = ({
                                 />
                             }
                         </div>
-                    </div>
-                    <div
-                        className={styles.body}
-                    >
                         <div
                             className={styles.chartWrapper}
                         >
                             {
-                                dimensions.isResized &&
+                                dimensions.isDomAttached &&
                                 data3 &&
                                 !loadingMessage &&
                                 <SubChart
@@ -167,7 +156,6 @@ const SubCharts: React.FC<SubChartProps> = ({
                                 />
                             }
                         </div>
-                    </div>
                 </div>
             }
         </section>

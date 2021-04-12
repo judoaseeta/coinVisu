@@ -211,6 +211,7 @@ const GET_PORTFOLIOS_SUCCESS = 'GET_PORTFOLIOS_SUCCESS' as const;
 export const TOGGLE_ADD_PORTFOLIO = 'TOGGLE_ADD_PORTFOLIO' as const;
 export const ADD_PORTFOLIO = 'ADD_PORTFOLIO' as const;
 export const ADD_PORTFOLIO_FAILURE = 'ADD_PORTFOLIO_FAILURE' as const;
+export const ADD_PORTFOLIO_SUCCESS = 'ADD_PORTFOLIO_SUCCESS' as const;
 export const getPortfolios = (symbol: string) => ({
     type: GET_PORTFOLIOS,
     payload: {
@@ -232,12 +233,16 @@ export const addPortfolio = (symbol: string, amount: number, price: number) => (
         price
     }
 });
+
 export const addPortfolioFailure = (reason: string) => ({
     type: ADD_PORTFOLIO_FAILURE,
     payload: {
         reason
     }
 });
+export const addPortfolioSuccess = () => ({
+    type: ADD_PORTFOLIO_SUCCESS
+})
 export const toggleAddPortfolio = (toggle: boolean) => ({
     type: TOGGLE_ADD_PORTFOLIO,
     payload: {
@@ -247,4 +252,4 @@ export const toggleAddPortfolio = (toggle: boolean) => ({
 export type PortfolioActions = 
 ReturnType<typeof getPortfolios> | ReturnType<typeof addPortfolio> | 
 ReturnType<typeof getPortfoliosSuccess> | ReturnType<typeof addPortfolioFailure> |
-ReturnType<typeof toggleAddPortfolio>;
+ReturnType<typeof toggleAddPortfolio> | ReturnType<typeof addPortfolioSuccess>;

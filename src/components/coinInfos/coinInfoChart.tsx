@@ -42,7 +42,7 @@ const CoinInfoChart:React.FC<CoinInfoChartProps> = ({
         className={cx('chartWrapper')}
     >
         {
-            dimensions.isResized &&
+            dimensions.isDomAttached &&
             chartLine &&
             <svg
                 width={dimensions.width}

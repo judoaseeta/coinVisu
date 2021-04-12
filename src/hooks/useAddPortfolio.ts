@@ -40,6 +40,7 @@ const UseAddPortfolio = ({
     const history = useHistory();
     const isLogin = useSelector<rootState,boolean>( state => state.auth.isLogin);
     const on = useSelector<rootState, boolean>(state => state.portfolios.on);
+    const addPortfolioLoading = useSelector<rootState, string>(state => state.portfolios.addPortfolioLoading);
     const ref = useRef<HTMLDivElement|null>(null);
 
     // 로그인 창 작동
@@ -127,6 +128,7 @@ const UseAddPortfolio = ({
     
     useEffect(() => {
         if(!on) {
+            clear();
             document.body.classList.remove('lock');
         } else {
             document.body.classList.add('lock');
@@ -175,6 +177,7 @@ const UseAddPortfolio = ({
         isLogin,
         ref,
         on,
+        addPortfolioLoading,
         onContainerClick,
         onPriceChange,
         onAmountChange,

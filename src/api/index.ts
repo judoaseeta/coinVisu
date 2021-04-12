@@ -102,7 +102,11 @@ export const getHistoData = async({
         }));
         return mapped;
     } catch(e) {
-        throw new Error(e);
+        if(e.message === 'TypeError: Failed to fetch') {
+            throw new Error('데이터를 불러오는데 실패했습니다 ㅠㅠ');
+        } else {
+
+        }
     } 
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
-
+// components
+import Loading from '../loading';
 // utils
 import { symbolWithConsonant } from '../../utils/consonant';
 //styles
@@ -9,6 +10,7 @@ const cx = classnames.bind(styles);
 export interface AddPortFolioProps {
     on: boolean;
     isLogin: boolean;
+    addPortfolioLoading: string;
     symbol: string;
     purchasePrice: string;
     purchaseAmount: string;
@@ -30,6 +32,7 @@ const AddPortFolio = React.forwardRef<HTMLDivElement, AddPortFolioProps>(({
     purchasePrice,
     priceError,
     amountError,
+    addPortfolioLoading,
     onContainerClick,
     onPriceChange,
     onAmountChange,
@@ -52,11 +55,15 @@ const AddPortFolio = React.forwardRef<HTMLDivElement, AddPortFolioProps>(({
         ref={ref}
         onKeyDown={onKeyDown}
     >
-            
                 <form
                     className={styles.form}
                     onSubmit={onSubmit}
                 >
+                    <Loading 
+                        loadingMessage={addPortfolioLoading}
+                        isAbsolute={true}
+                        colorOption="dark"
+                    />
                     <h3>{symbolWithConsonant(symbol,'obj')} 포트폴리오에 추가합니다.</h3>
                     <div
                         className={styles.inputUnits}

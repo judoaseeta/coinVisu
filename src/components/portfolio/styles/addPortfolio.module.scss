@@ -2,7 +2,6 @@
 
 .container {
     background-color: var(--contrast);
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -30,6 +29,7 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    position:relative;
 }
 .inputUnits {
     margin-top: 1rem;

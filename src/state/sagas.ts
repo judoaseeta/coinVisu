@@ -49,6 +49,7 @@ import {
     // portfolio
     addPortfolio,
     addPortfolioFailure,
+    addPortfolioSuccess,
     getPortfolios,
     getPortfoliosSuccess,
     ADD_PORTFOLIO,
@@ -263,6 +264,7 @@ function* addPortfolioSaga({ type, payload : { amount, price, symbol }}:ReturnTy
         // 현재 타입스크립트는 리덕스 사가의 변수에 할당하지 않는 yield 관련해서 타입에러 이슈가 있음.
         // 불가피하게 할당함.
         const res: true = yield call(requestAddPortfolio, symbol, price, amount);
+        yield put(addPortfolioSuccess());
         yield put(getPortfolios(symbol));
     }catch(e) {
         yield put(addPortfolioFailure(e.message));
