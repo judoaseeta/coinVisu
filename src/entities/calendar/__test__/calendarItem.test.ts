@@ -28,10 +28,10 @@ describe('Testing CalendarItem',() => {
         const calendarItem = new CalendarItem(new Date(1988,0,15));
         // when type: Date with a earlier date should return false
         const earlierDate = new Date(1987,0,12);
-        expect(calendarItem.isEarlierthanTarget(earlierDate)).toBe(false);
+        expect(calendarItem.isEarlierOrSame(earlierDate)).toBe(false);
           // when type: Date with a earlier date should return true
         const laterDate = new Date(1997,3,23);
-        expect(calendarItem.isEarlierthanTarget(laterDate)).toBe(true);
+        expect(calendarItem.isEarlierOrSame(laterDate)).toBe(true);
     });
     it('isAfterToday',() => {
         const oldDay = new CalendarItem(new Date(1988,0,15));
